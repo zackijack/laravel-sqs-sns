@@ -5,7 +5,6 @@ namespace Joblocal\LaravelSqsSnsSubscriptionQueue\Tests;
 use PHPUnit\Framework\TestCase;
 use Aws\Sqs\SqsClient;
 use Illuminate\Container\Container;
-
 use Joblocal\LaravelSqsSnsSubscriptionQueue\Queue\SqsSnsQueue;
 use Joblocal\LaravelSqsSnsSubscriptionQueue\Queue\Jobs\SqsSnsJob;
 
@@ -31,7 +30,7 @@ class SqsSnsQueueTest extends TestCase
     public function testWillSetRoutes()
     {
         $queue = new SqsSnsQueue($this->sqsClient, 'default_queue', '', [
-            "Subject#action" => '\\Job',
+            'Subject#action' => '\\Job',
         ]);
 
         $queueReflection = new \ReflectionClass($queue);
@@ -39,7 +38,7 @@ class SqsSnsQueueTest extends TestCase
         $routeReflectionProperty->setAccessible(true);
 
         $this->assertEquals([
-            "Subject#action" => '\\Job',
+            'Subject#action' => '\\Job',
         ], $routeReflectionProperty->getValue($queue));
     }
 

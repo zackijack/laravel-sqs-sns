@@ -1,11 +1,10 @@
 <?php
 
-namespace Joblocal\LaravelSqsSnsSubscriptionQueue\Queue;
+namespace Zackyjack\LaravelSqsSns\Queue;
 
 use Aws\Sqs\SqsClient;
 use Illuminate\Queue\SqsQueue;
-
-use Joblocal\LaravelSqsSnsSubscriptionQueue\Queue\Jobs\SqsSnsJob;
+use Zackyjack\LaravelSqsSns\Queue\Jobs\SqsSnsJob;
 
 class SqsSnsQueue extends SqsQueue
 {

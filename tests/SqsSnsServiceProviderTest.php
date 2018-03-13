@@ -1,12 +1,9 @@
 <?php
 
-namespace Joblocal\LaravelSqsSnsSubscriptionQueue\Tests;
+namespace Zackyjack\LaravelSqsSns\Tests;
 
 use Orchestra\Testbench\TestCase;
-use Illuminate\Queue\QueueManager;
-
-use Joblocal\LaravelSqsSnsSubscriptionQueue\SqsSnsServiceProvider;
-use Joblocal\LaravelSqsSnsSubscriptionQueue\Queue\Connectors\SqsSnsConnector;
+use Zackyjack\LaravelSqsSns\Queue\Connectors\SqsSnsConnector;
 
 class SqsSnsServiceProviderTest extends TestCase
 {
@@ -21,9 +18,9 @@ class SqsSnsServiceProviderTest extends TestCase
     {
         $app['config']->set('queue.connections.sqs-sns', [
             'driver' => 'sqs-sns',
-            'key'    => env('AWS_ACCESS_KEY', 'your-public-key'),
+            'key' => env('AWS_ACCESS_KEY', 'your-public-key'),
             'secret' => env('AWS_SECRET_ACCESS_KEY', 'your-secret-key'),
-            'queue'  => env('QUEUE_URL', 'your-queue-url'),
+            'queue' => env('QUEUE_URL', 'your-queue-url'),
             'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
             'routes' => [],
         ]);
@@ -40,7 +37,7 @@ class SqsSnsServiceProviderTest extends TestCase
             $this->app['queue'],
             'sqs-sns'
         );
-        
+
         $this->assertInstanceOf(SqsSnsConnector::class, $connector);
     }
 }

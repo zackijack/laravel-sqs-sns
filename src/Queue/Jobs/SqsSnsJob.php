@@ -1,6 +1,6 @@
 <?php
 
-namespace Joblocal\LaravelSqsSnsSubscriptionQueue\Queue\Jobs;
+namespace Zackyjack\LaravelSqsSns\Queue\Jobs;
 
 use Aws\Sqs\SqsClient;
 use Illuminate\Queue\Jobs\SqsJob;
@@ -59,7 +59,7 @@ class SqsSnsJob extends SqsJob
                     'command' => serialize(new $commandName(
                         $body['Subject'],
                         json_decode($body['Message'], true)
-                    ))
+                    )),
                 ],
             ]);
         }

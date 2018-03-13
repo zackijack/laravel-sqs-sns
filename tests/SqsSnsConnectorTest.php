@@ -1,10 +1,10 @@
 <?php
 
-namespace Joblocal\LaravelSqsSnsSubscriptionQueue\Tests;
+namespace Zackyjack\LaravelSqsSns\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Joblocal\LaravelSqsSnsSubscriptionQueue\Queue\Connectors\SqsSnsConnector;
-use Joblocal\LaravelSqsSnsSubscriptionQueue\Queue\SqsSnsQueue;
+use Zackyjack\LaravelSqsSns\Queue\Connectors\SqsSnsConnector;
+use Zackyjack\LaravelSqsSns\Queue\SqsSnsQueue;
 
 class SqsSnsConnectorTest extends TestCase
 {

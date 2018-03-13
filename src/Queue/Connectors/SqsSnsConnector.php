@@ -1,12 +1,11 @@
 <?php
 
-namespace Joblocal\LaravelSqsSnsSubscriptionQueue\Queue\Connectors;
+namespace Zackyjack\LaravelSqsSns\Queue\Connectors;
 
 use Aws\Sqs\SqsClient;
 use Illuminate\Queue\Connectors\SqsConnector;
 use Illuminate\Support\Arr;
-
-use Joblocal\LaravelSqsSnsSubscriptionQueue\Queue\SqsSnsQueue;
+use Zackyjack\LaravelSqsSns\Queue\SqsSnsQueue;
 
 class SqsSnsConnector extends SqsConnector
 {

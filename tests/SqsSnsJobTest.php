@@ -1,12 +1,11 @@
 <?php
 
-namespace Joblocal\LaravelSqsSnsSubscriptionQueue\Tests;
+namespace Zackyjack\LaravelSqsSns\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Aws\Sqs\SqsClient;
 use Illuminate\Container\Container;
-
-use Joblocal\LaravelSqsSnsSubscriptionQueue\Queue\Jobs\SqsSnsJob;
+use Zackyjack\LaravelSqsSns\Queue\Jobs\SqsSnsJob;
 
 class SqsSnsJobTest extends TestCase
 {
@@ -57,7 +56,6 @@ class SqsSnsJobTest extends TestCase
         ]);
     }
 
-
     public function testWillResolveSqsSubscriptionJob()
     {
         $jobPayload = $this->getSqsSnsJobSubjectRoute()->payload();
@@ -80,7 +78,6 @@ class SqsSnsJobTest extends TestCase
         $this->assertEquals($expectedCommand, $jobPayload['data']['command']);
     }
 
-
     public function testWillResolveSqsSubscriptionJobTopicRoute()
     {
         $jobPayload = $this->getSqsSnsJobTopicRoute()->payload();
@@ -102,7 +99,6 @@ class SqsSnsJobTest extends TestCase
 
         $this->assertEquals($expectedCommand, $jobPayload['data']['command']);
     }
-
 
     public function testWillLeaveDefaultSqsJobUntouched()
     {

@@ -1,10 +1,9 @@
 <?php
 
-namespace Joblocal\LaravelSqsSnsSubscriptionQueue;
+namespace Zackyjack\LaravelSqsSns;
 
 use Illuminate\Support\ServiceProvider;
-
-use Joblocal\LaravelSqsSnsSubscriptionQueue\Queue\Connectors\SqsSnsConnector;
+use Zackyjack\LaravelSqsSns\Queue\Connectors\SqsSnsConnector;
 
 class SqsSnsServiceProvider extends ServiceProvider
 {
